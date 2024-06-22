@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxwcs3fkvjo2i"]
+
+[ext_resource type="Shader" path="res://center_glow.gdshader" id="1_11g86"]
+[ext_resource type="Texture2D" uid="uid://ii5o4v7cfxl3" path="res://images/Ard.png" id="2_7r2to"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xpch"]
+resource_local_to_scene = true
+shader = ExtResource("1_11g86")
+shader_parameter/offset_x = 0.12
+shader_parameter/offset_y = 0.5
+shader_parameter/stretch_x = 1.5
+shader_parameter/stretch_y = 0.31
+shader_parameter/brightness = 5.16
+shader_parameter/redness = 0.86
+shader_parameter/whiteness = 1.8
+
+[node name="Ard" type="Sprite2D"]
+material = SubResource("ShaderMaterial_3xpch")
+texture = ExtResource("2_7r2to")
+hframes = 2

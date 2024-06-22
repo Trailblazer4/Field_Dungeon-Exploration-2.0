@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://6hr1v68gt6qj"]
+
+[ext_resource type="Shader" path="res://Water.gdshader" id="1_l07f1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3buh"]
+shader = ExtResource("1_l07f1")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3wq5t"]
+
+[node name="Water" type="TextureRect"]
+material = SubResource("ShaderMaterial_m3buh")
+offset_right = 557.0
+offset_bottom = 412.0
+texture = SubResource("CanvasTexture_3wq5t")

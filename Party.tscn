@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwdbl3ct4tar"]
+
+[ext_resource type="Script" path="res://Party1.gd" id="1_1a77s"]
+[ext_resource type="Script" path="res://Party2.gd" id="2_0dg52"]
+[ext_resource type="Script" path="res://Party3.gd" id="3_spemv"]
+[ext_resource type="Script" path="res://Party4.gd" id="4_c0tv0"]
+
+[node name="Party" type="Node2D"]
+
+[node name="Party1" type="CharacterBody2D" parent="."]
+collision_mask = 12
+motion_mode = 1
+script = ExtResource("1_1a77s")
+
+[node name="Party2" type="CharacterBody2D" parent="."]
+collision_mask = 12
+motion_mode = 1
+script = ExtResource("2_0dg52")
+
+[node name="Party3" type="CharacterBody2D" parent="."]
+collision_mask = 12
+motion_mode = 1
+script = ExtResource("3_spemv")
+
+[node name="Party4" type="CharacterBody2D" parent="."]
+collision_mask = 12
+motion_mode = 1
+script = ExtResource("4_c0tv0")
+
+[connection signal="history_updated" from="Party1" to="Party2" method="_on_party_1_history_updated"]
+[connection signal="history_updated" from="Party1" to="Party3" method="_on_party_1_history_updated"]
+[connection signal="history_updated" from="Party1" to="Party4" method="_on_party_1_history_updated"]

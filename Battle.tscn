@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnfkwnsp66nme"]
+
+[ext_resource type="Script" path="res://Battle.gd" id="1_i6x73"]
+[ext_resource type="Script" path="res://Party1Battle.gd" id="3_xkxwl"]
+[ext_resource type="Script" path="res://PartyBattle.gd" id="3_xxug3"]
+[ext_resource type="Script" path="res://Party2Battle.gd" id="4_pj4ix"]
+[ext_resource type="Script" path="res://Party3Battle.gd" id="5_mvyiy"]
+[ext_resource type="Script" path="res://Party4Battle.gd" id="6_2p83i"]
+[ext_resource type="PackedScene" uid="uid://ckbm4rep23k4y" path="res://battle_wheel.tscn" id="8_5ukcn"]
+[ext_resource type="PackedScene" uid="uid://bwnjn4b4ubfo5" path="res://BattleMenu.tscn" id="9_d36qt"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_i6x73")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1
+position = Vector2(572, 336)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -104.0
+offset_top = -57.0
+offset_right = 1228.0
+offset_bottom = 723.0
+color = Color(0.52549, 0.623529, 0, 1)
+
+[node name="Party" type="Node2D" parent="."]
+position = Vector2(816, 307)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("3_xxug3")
+
+[node name="Party1" type="CharacterBody2D" parent="Party"]
+position = Vector2(17.3333, -112)
+motion_mode = 1
+script = ExtResource("3_xkxwl")
+
+[node name="Party2" type="CharacterBody2D" parent="Party"]
+position = Vector2(20, -32.6667)
+motion_mode = 1
+script = ExtResource("4_pj4ix")
+
+[node name="Party3" type="CharacterBody2D" parent="Party"]
+position = Vector2(21, 45)
+motion_mode = 1
+script = ExtResource("5_mvyiy")
+
+[node name="Party4" type="CharacterBody2D" parent="Party"]
+position = Vector2(23.3333, 117.333)
+motion_mode = 1
+script = ExtResource("6_2p83i")
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2(481, 311)
+
+[node name="Battle HUD" type="Node2D" parent="."]
+position = Vector2(571, 314)
+
+[node name="Battle Wheel" parent="Battle HUD" instance=ExtResource("8_5ukcn")]
+position = Vector2(419, 239)
+scale = Vector2(0.08, 0.08)
+
+[node name="MagicMenu" parent="Battle HUD" instance=ExtResource("9_d36qt")]
+process_mode = 4
+visible = false
+offset_left = -114.0
+offset_top = -247.0
+offset_right = 296.0
+offset_bottom = 286.0
+scale = Vector2(0.8, 0.8)
+
+[node name="ItemsMenu" parent="Battle HUD" instance=ExtResource("9_d36qt")]
+process_mode = 4
+visible = false
+offset_left = -115.0
+offset_top = -247.0
+offset_right = 295.0
+offset_bottom = 286.0
+scale = Vector2(0.8, 0.8)

@@ -1,0 +1,139 @@
+[gd_scene load_steps=13 format=3 uid="uid://c12pf28icwp3x"]
+
+[ext_resource type="Script" path="res://PlayableCharacters/Cinnamoroll.gd" id="1_x236d"]
+[ext_resource type="Shader" path="res://PlayableCharacters/Cinnamoroll.gdshader" id="2_14xjr"]
+[ext_resource type="Texture2D" uid="uid://bemrv147vc54k" path="res://images/cinnamoroll.png" id="2_dq3og"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj3uk"]
+shader = ExtResource("2_14xjr")
+
+[sub_resource type="Animation" id="Animation_j4k0t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_cni1k"]
+resource_name = "walk_down"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 8, 12, 16]
+}
+
+[sub_resource type="Animation" id="Animation_uhnit"]
+resource_name = "walk_left"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 10, 14, 18]
+}
+
+[sub_resource type="Animation" id="Animation_j8aru"]
+resource_name = "walk_right"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [5, 9, 13, 17]
+}
+
+[sub_resource type="Animation" id="Animation_p43d2"]
+resource_name = "walk_up"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [7, 11, 15, 19]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ndimi"]
+_data = {
+"RESET": SubResource("Animation_j4k0t"),
+"walk_down": SubResource("Animation_cni1k"),
+"walk_left": SubResource("Animation_uhnit"),
+"walk_right": SubResource("Animation_j8aru"),
+"walk_up": SubResource("Animation_p43d2")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_raitg"]
+size = Vector2(29, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vlmq"]
+size = Vector2(92, 18)
+
+[node name="Cinnamoroll" type="CharacterBody2D"]
+collision_mask = 12
+motion_mode = 1
+script = ExtResource("1_x236d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tj3uk")
+position = Vector2(0, -17)
+texture = ExtResource("2_dq3og")
+hframes = 4
+vframes = 5
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ndimi")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_raitg")
+
+[node name="Weapon" type="StaticBody2D" parent="."]
+position = Vector2(73, 1)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon"]
+shape = SubResource("RectangleShape2D_3vlmq")
+
+[node name="ColorRect" type="ColorRect" parent="Weapon"]
+offset_left = -46.0
+offset_top = -9.0
+offset_right = 46.0
+offset_bottom = 9.0

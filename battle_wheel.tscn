@@ -1,0 +1,151 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckbm4rep23k4y"]
+
+[ext_resource type="Texture2D" uid="uid://cyipnfng2qufv" path="res://images/ps3_button_o.png" id="1_gtoih"]
+[ext_resource type="Texture2D" uid="uid://bhy7osn3bkfm6" path="res://images/ps3_button_square.png" id="2_yu646"]
+[ext_resource type="Texture2D" uid="uid://c26rct3why4i5" path="res://images/ps3_button_triangle.png" id="3_06b1m"]
+[ext_resource type="Texture2D" uid="uid://mof18hbhvarr" path="res://images/ps3_button_x.png" id="4_n2ust"]
+
+[node name="Battle Wheel" type="Node2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="ItemPrompt" type="Polygon2D" parent="."]
+z_index = 2
+position = Vector2(-263, -619)
+scale = Vector2(500, 263.239)
+color = Color(0.196078, 0.298039, 0.443137, 0.882353)
+polygon = PackedVector2Array(-1, -1, 2, -1, 2, -0.000869989, 2, 1, 0.467937, 1, -1, 1)
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -735.0
+offset_top = -951.0
+offset_right = -435.0
+offset_bottom = -846.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_font_sizes/font_size = 46
+text = "Item"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MagicPrompt" type="Polygon2D" parent="."]
+z_index = 2
+position = Vector2(-1207, -36.9999)
+scale = Vector2(500, 263.239)
+color = Color(0.196078, 0.298039, 0.443137, 0.882353)
+polygon = PackedVector2Array(-1, -1, 2, -1, 2, -0.000869989, 2, 1, 0.467937, 1, -1, 1)
+
+[node name="Label2" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1703.0
+offset_top = -303.0
+offset_right = -1403.0
+offset_bottom = -198.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_font_sizes/font_size = 46
+text = "Magic/Skill    "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="RunPrompt" type="Polygon2D" parent="."]
+z_index = 2
+position = Vector2(706, -40.9999)
+scale = Vector2(500, 263.239)
+color = Color(0.196078, 0.298039, 0.443137, 0.882353)
+polygon = PackedVector2Array(-1, -1, 2, -1, 2, -0.000869989, 2, 1, 0.467937, 1, -1, 1)
+
+[node name="Label3" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -307.0
+offset_right = 510.0
+offset_bottom = -202.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_font_sizes/font_size = 46
+text = "Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AttackPrompt" type="Polygon2D" parent="."]
+z_index = 2
+position = Vector2(-281, 569)
+scale = Vector2(500, 263.239)
+color = Color(0.196078, 0.298039, 0.443137, 0.882353)
+polygon = PackedVector2Array(-1, -1, 2, -1, 2, -0.000869989, 2, 1, 0.467937, 1, -1, 1)
+
+[node name="Label4" type="Label" parent="."]
+z_index = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -777.0
+offset_top = 351.0
+offset_right = -477.0
+offset_bottom = 456.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_font_sizes/font_size = 46
+text = "Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+z_as_relative = false
+position = Vector2(1.50648e+06, -1.15422e+06)
+scale = Vector2(721.508, 689.489)
+color = Color(0, 0.141176, 0.254902, 0.65098)
+polygon = PackedVector2Array(-2089, 1673, -2087, 1673, -2086, 1674, -2087, 1675, -2089, 1675, -2090, 1674)
+
+[node name="Ps3ButtonO" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(366, -38)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_gtoih")
+
+[node name="Ps3ButtonSquare" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-365, -35)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_yu646")
+
+[node name="Ps3ButtonTriangle" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-5, -466)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_06b1m")
+
+[node name="Ps3ButtonX" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(6, 416)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_n2ust")

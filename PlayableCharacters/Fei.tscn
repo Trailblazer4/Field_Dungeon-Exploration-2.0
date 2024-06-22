@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://dddpk2n8wah0u"]
+
+[ext_resource type="Script" path="res://PlayableCharacters/Fei.gd" id="1_862y2"]
+[ext_resource type="Texture2D" uid="uid://dj08kkal6kyiw" path="res://images/PlayStation - Xenogears - Fei Fong Wong.png" id="2_v8ymr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j6x2n"]
+
+[sub_resource type="Animation" id="Animation_dkpb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+
+[sub_resource type="Animation" id="Animation_inibu"]
+resource_name = "walk_side"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pjn3k"]
+_data = {
+"RESET": SubResource("Animation_dkpb3"),
+"walk_side": SubResource("Animation_inibu")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfscv"]
+size = Vector2(20, 47)
+
+[node name="Fei" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_862y2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_j6x2n")
+texture = ExtResource("2_v8ymr")
+hframes = 10
+vframes = 40
+frame = 59
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_pjn3k")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -2)
+shape = SubResource("RectangleShape2D_rfscv")

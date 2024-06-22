@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxrso16qu7jso"]
+
+[ext_resource type="Script" path="res://PlayableCharacters/Misty.gd" id="1_a85g3"]
+[ext_resource type="Texture2D" uid="uid://ro0funkdus6s" path="res://images/misty_spritesheet.png" id="2_5d2fq"]
+
+[sub_resource type="Animation" id="Animation_qcklg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_5uu4d"]
+resource_name = "walk_down"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_amr23"]
+resource_name = "walk_left"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_76nag"]
+resource_name = "walk_right"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_ulwwv"]
+resource_name = "walk_up"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7sfbu"]
+_data = {
+"RESET": SubResource("Animation_qcklg"),
+"walk_down": SubResource("Animation_5uu4d"),
+"walk_left": SubResource("Animation_amr23"),
+"walk_right": SubResource("Animation_76nag"),
+"walk_up": SubResource("Animation_ulwwv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5q1i"]
+size = Vector2(24, 38)
+
+[node name="Misty" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_a85g3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5d2fq")
+hframes = 4
+vframes = 4
+frame = 14
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_7sfbu")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u5q1i")

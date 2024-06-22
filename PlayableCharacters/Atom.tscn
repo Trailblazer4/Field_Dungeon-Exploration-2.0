@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c03ox441f302j"]
+
+[ext_resource type="Script" path="res://PlayableCharacters/Atom.gd" id="1_2c5eh"]
+[ext_resource type="Texture2D" uid="uid://5cf3ykxcicr2" path="res://images/Game_Boy_Advance_-_Astro_Boy_Omega_Factor_-_Astro_Boy-removebg-preview.png" id="2_6t5aw"]
+
+[node name="Atom" type="CharacterBody2D"]
+script = ExtResource("1_2c5eh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6t5aw")
+hframes = 19
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

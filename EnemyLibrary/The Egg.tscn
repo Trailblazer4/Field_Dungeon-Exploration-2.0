@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://wj7tgsybiwla"]
+
+[ext_resource type="Script" path="res://EnemyLibrary/The Egg.gd" id="1_1pryi"]
+[ext_resource type="Texture2D" uid="uid://cdmedtrp3n8x2" path="res://images/The Egg.png" id="2_0628u"]
+
+[node name="Entity" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+motion_mode = 1
+script = ExtResource("1_1pryi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0628u")

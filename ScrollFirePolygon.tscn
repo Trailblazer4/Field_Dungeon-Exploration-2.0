@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2xm8wukq6bio"]
+
+[ext_resource type="Texture2D" uid="uid://64k5dcii01vw" path="res://images/Chio Icon.png" id="3_axo8l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3oxwd"]
+
+[node name="Node2D" type="Node2D"]
+texture_repeat = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_3oxwd")
+texture = ExtResource("3_axo8l")

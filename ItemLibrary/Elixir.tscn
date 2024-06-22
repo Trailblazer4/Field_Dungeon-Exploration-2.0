@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7fe7emdi32mi"]
+
+[ext_resource type="Script" path="res://ItemLibrary/Elixir.gd" id="1_bbi5d"]
+[ext_resource type="Texture2D" uid="uid://22gpgkwyicg4" path="res://images/Green Elixir.png" id="2_y07hr"]
+
+[node name="Elixir" type="Node2D"]
+scale = Vector2(0.35, 0.35)
+script = ExtResource("1_bbi5d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y07hr")

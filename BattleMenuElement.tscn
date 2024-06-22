@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dr6oq7t7xbab0"]
+
+[node name="BattleMenuElement" type="Control"]
+custom_minimum_size = Vector2(301, 30)
+layout_mode = 3
+anchor_right = 0.176
+anchor_bottom = 0.086
+offset_right = 98.248
+offset_bottom = -15.728
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+custom_minimum_size = Vector2(271, 2.08165e-12)
+layout_mode = 0
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 277.0
+offset_bottom = 26.0
+split_offset = 10
+
+[node name="Icon" type="Label" parent="HSplitContainer"]
+layout_mode = 2
+text = "(' v ')"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="HSplitContainer/HSplitContainer"]
+layout_mode = 2
+text = "Ardent"
+
+[node name="SP Req" type="Label" parent="HSplitContainer/HSplitContainer"]
+layout_mode = 2
+text = "90"
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(301, 2.08165e-12)
+layout_mode = 1
+offset_right = 301.0
+offset_bottom = 27.0
+scale = Vector2(0.96, 1)
+color = Color(0, 0.72549, 0.709804, 0.509804)
